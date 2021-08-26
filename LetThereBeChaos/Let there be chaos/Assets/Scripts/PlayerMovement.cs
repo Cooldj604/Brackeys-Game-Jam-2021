@@ -9,16 +9,18 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Camera cam;
-    public Animator Objects;
+    public Animator[] Objects;
     public Animator CamTilt;
 
     Vector2 movement;
     Vector2 mousePos;
 
+    PlayerKeycodes characterInput;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        characterInput = GetComponent<PlayerKeycodes>();
     }
 
     // Update is called once per frame
@@ -30,15 +32,17 @@ public class PlayerMovement : MonoBehaviour
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetKey(characterInput.chaosMode))
         {
-            Debug.Log("hm");
             chaos();    
 
         }else
         {
-            Objects.speed = 1.0f;
-            
+            foreach(Animator i in Objects)
+            {
+                i.speed = 1.0f;
+            }
+       
             CamTilt.SetBool("IsChaos", false);
         }
 
@@ -56,8 +60,11 @@ public class PlayerMovement : MonoBehaviour
 
     void chaos()
     {
-        Objects.speed = 6.0f;
-        Debug.Log("zoom");
+        foreach (Animator i in Objects)
+        {
+            i.speed = 1.75f;
+        }
+
         CamTilt.SetBool("IsChaos", true);
     }
 
