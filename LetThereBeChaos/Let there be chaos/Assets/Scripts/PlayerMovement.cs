@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         {
             foreach(Animator i in Objects)
             {
-                i.speed = 1.0f;
+                i.speed = 0.8f;
             }
        
             CamTilt.SetBool("IsChaos", false);
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
     {
         foreach (Animator i in Objects)
         {
-            i.speed = 1.75f;
+            i.speed = 1.5f;
         }
 
         CamTilt.SetBool("IsChaos", true);
