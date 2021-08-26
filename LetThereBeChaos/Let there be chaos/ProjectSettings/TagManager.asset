@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Bullet
+  - PlayerTag
   layers:
   - Default
   - TransparentFX
