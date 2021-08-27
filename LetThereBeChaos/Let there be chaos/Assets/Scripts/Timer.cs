@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
         else
         {
             timeValue = 0;
+            FindObjectOfType<GameManager>().EndGame();
         }
 
         DisplayTime(timeValue);

@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
     {
         foreach (Animator i in Objects)
         {
-            i.speed = 1.5f;
+            i.speed = 1.75f;
         }
 
         CamTilt.SetBool("IsChaos", true);
