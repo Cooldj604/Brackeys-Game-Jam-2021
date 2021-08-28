@@ -8,15 +8,15 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float bulletForce = 20f;
-    public float shootingRate = 100000f;
+    public float shootingRate = 100f;
     private float shootCooldown = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time >= shootCooldown)
+        if (Input.GetButton("Fire1") && Time.time >= shootCooldown)
         {
-            shootCooldown = Time.time + 4f / shootingRate;
+            shootCooldown = Time.time + 1f / shootingRate;
             Shoot();
         }
     }

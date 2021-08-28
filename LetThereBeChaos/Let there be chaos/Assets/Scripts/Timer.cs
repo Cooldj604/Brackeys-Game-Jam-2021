@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
 
-    public float timeValue = 60;
+    public float timeValue = 45;
     public Text timer;
 
     // Update is called once per frame
