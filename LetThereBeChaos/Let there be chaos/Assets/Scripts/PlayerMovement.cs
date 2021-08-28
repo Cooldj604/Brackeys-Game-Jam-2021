@@ -9,8 +9,11 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Camera cam;
+
     public Animator[] Objects;
     public Animator CamTilt;
+    public Animator AnimeLines;
+    public Animator ChaosBack;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -44,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
             }
        
             CamTilt.SetBool("IsChaos", false);
+            AnimeLines.SetBool("IsChaos", false);
+            ChaosBack.SetBool("IsChaos", false);
         }
 
 
@@ -66,6 +71,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         CamTilt.SetBool("IsChaos", true);
+        AnimeLines.SetBool("IsChaos", true);
+        ChaosBack.SetBool("IsChaos", true);
     }
 
 }
