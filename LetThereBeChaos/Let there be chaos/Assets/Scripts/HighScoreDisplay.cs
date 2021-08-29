@@ -18,6 +18,6 @@ public class HighScoreDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        highscoreDisplay.text = Math.Round((50 - HighScore.highScore), 2).ToString();
+        highscoreDisplay.text = Math.Round((55 - HighScore.highScore), 2).ToString();
     }
 }
