@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
 
-    public float timeValue = 45;
+    public float timeValue = 50;
     public Text timer;
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if(timeValue > 0)
         {
@@ -23,10 +23,11 @@ public class Timer : MonoBehaviour
         }
 
         DisplayTime(timeValue);
+        Debug.Log(timeValue);
 
     }
 
-    void DisplayTime(float timeToDisplay)
+    public void DisplayTime(float timeToDisplay)
     {
 
         if(timeToDisplay < 0)
@@ -35,7 +36,14 @@ public class Timer : MonoBehaviour
         }
 
         timer.text = (Mathf.Round(timeValue).ToString());
-
-
     }
+
+    public void endingScore()
+    {
+        if (HighScore.highScore < timeValue)
+        {
+            HighScore.highScore = timeValue;
+        }
+    }
+
 }

@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
             ChaosBack.SetBool("IsChaos", false);
         }
 
+        if (Input.GetKeyDown(characterInput.chaosMode))
+        {
+            FindObjectOfType<AudioManager>().Play("Chaos");
+        }
 
     }
 
@@ -73,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
         CamTilt.SetBool("IsChaos", true);
         AnimeLines.SetBool("IsChaos", true);
         ChaosBack.SetBool("IsChaos", true);
+
+
     }
 
 }

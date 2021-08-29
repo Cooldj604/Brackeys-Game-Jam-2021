@@ -7,8 +7,9 @@ public class EndTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
+        FindObjectOfType<Timer>().endingScore();
+        
         FindObjectOfType<GameManager>().CompleteLevel();
-              
+                      
     }
 }
